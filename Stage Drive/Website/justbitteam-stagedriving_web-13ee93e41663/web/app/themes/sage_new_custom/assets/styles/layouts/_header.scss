@@ -1,0 +1,451 @@
+/*
+*   HEADER
+*/
+
+// ------------  HEADER MENU   -------------  //
+
+// wordpress  fix//
+#wpadminbar {
+  z-index: 9999999999 !important;
+}
+//  end wordpress fix //
+.navbar-primary {
+  position: fixed;
+  height: 70px;
+  background: #fff;
+  width: 100%;
+  top: 0;
+  z-index: 99999999;
+  border-bottom: 1px solid $light_grey;
+}
+.principal-menu {
+  padding: 0;
+}
+.principal-menu li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 800;
+
+  a {
+    color: #000;
+  }
+  a:hover {
+    background-color: #fff !important;
+    color: $brand-primary;
+  }
+  a:focus {
+    background-color: #fff !important;
+    color: #000;
+  }
+}
+.separator-menu {
+  position: absolute;
+  right: -8px;
+  top: -5%;
+  transform: translateY(50%);
+  font-size: 24px;
+  color: $brand-primary;
+  font-family: bold;
+}
+
+.detail-menu:last-child .separator-menu {
+   display: none;
+ }
+ .menu-item-active a:after {
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 0 10px 10px 10px;
+   border-color: transparent transparent $light_grey transparent;
+   content: ' ';
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%, 14px);
+ }
+ .menu-item-active-IE a:after {
+   transform: translate(-50%, 37px) !important;
+ }
+ .home-a {
+   padding: 13px !important;
+
+   img {
+     height: 21px;
+   }
+ }
+
+ // HEADER RIGHT //
+ .header-logo-right {
+   float: right;
+  //  margin: 5px;
+  //  padding: 5px;
+   position: relative;
+ }
+ .description-opel {
+   padding: 14px 120px 14px 5px;
+   font-size: 16px !important;
+   font-weight: 900;
+   margin: 0;
+ }
+ .angle {
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 0 0 67px 60px;
+   border-color: transparent transparent #000000 transparent;
+   //background: aquamarine;
+   position: absolute;
+   right: 65px;
+   top: -5px;
+ }
+ .box-logo {
+   height: 67px;
+   width: 70px;
+   background-color: #000;
+ }
+ .header-logo {
+   padding-top: 10px;
+ }
+ @media (max-width: 1440px) {
+   .principal-menu {
+     .menu-item {
+       a {
+         padding-left: 5px;
+         padding-right: 5px;
+       }
+     }
+   }
+ }
+  @media (max-width: 1270px) {
+
+    .home-a {
+      padding: 13px 5px 13px 10px!important;
+    }
+    .principal-menu {
+      li {
+        font-size: 14px;
+      }
+      .menu-item {
+        padding: 5px 3px;
+        margin: 5px 2px;
+      }
+    }
+    .angle {
+      right: 60px;
+    }
+    .description-opel {
+      padding: 14px 115px 14px 5px
+    }
+    .separator-menu {
+      right: -7px;
+      top: -7%;
+    }
+    .description-opel {
+      padding: 15px 112px 14px 5px;
+      font-size: 14px !important;
+    }
+
+  }
+ @media (max-width: 1070px) {
+   .principal-menu {
+     li {
+       font-size: 13px;
+     }
+    }
+    .description-opel {
+      padding: 16px 112px 14px 5px;
+      font-size: 13px !important;
+    }
+ }
+
+// ------------  END HEADER MENU   -------------  //
+
+//--------- STAGE DRIVING MENU ---------//
+
+/*
+* effetct
+*/
+
+.custom-header {
+  height: 48px;
+}
+.hook-header {
+  //background: $orange;
+  //position: fixed;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  z-index: 999999;
+}
+.hook-header  {
+  background-image: linear-gradient(to right, #ed3e5b,#f05d4b,#f37b4d,#fab479 );
+}
+@media (max-width:991px) {
+  .hook-header  {
+    background-image: linear-gradient(to right, #ed3e5b,#f05d4b,#f37b4d,#f9a76f );
+  }
+}
+@media (max-width:770px) {
+  .hook-header  {
+    background-image: linear-gradient(to right, #ef4f52,#f06248,#f37b4d,#f79964 );
+  }
+}
+@media (max-width:600px) {
+  .hook-header  {
+    background-image: linear-gradient(to right, #ef564f,#f06348,#f3784a,#f58d5a );
+  }
+}
+@media (max-width:450px) {
+  .hook-header  {
+    background-image: linear-gradient(to right, #ef5b4c,#f16547,#f27245,#f58554 );
+  }
+}
+
+.default-hook {
+  top: 0;
+}
+.fixed-hook {
+  top: -80px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+/*
+* end effect
+*/
+
+
+.logo-left-header {
+   height: 60px;
+  // width: 221px;
+  //height: 100%;
+}
+.description-logo {
+  text-align:center;
+  display:inline-block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  font-weight: 300;
+  margin: 0;
+  transform: translateY(5px);
+}
+.nav-left {
+  // background: $orange;
+  float: left;
+  width: 30%;
+  padding: 10px 20px;
+  height: 80px;
+}
+.nav-right {
+  float: left;
+  // background: $orange;
+  height: 80px;
+  width: 30%;
+}
+.nav-center {
+  // background: $orange;
+  height: 80px;
+  width: 40%;
+  float: left;
+  h1{
+    text-align: center;
+    color: #ffffff;
+    font-size: 19px;
+    @media screen and (min-width: 464px) {
+      font-size: 36px;
+    }
+    span{
+      font-size: 14px;
+      @media screen and (min-width: 464px) {
+        font-size: 25px;
+      }
+    }
+    a{
+      color: #ffffff;
+    }
+    &:visited{
+      color: #ffffff;
+    }
+    &:hover{
+      color: #ffffff;
+    }
+  }
+}
+.wrap-logo-right {
+  float: right;
+  padding: 10px 20px;
+}
+.logo-right-header {
+  height: 45px;
+  width: 45px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+.dropdown-menu-custom {
+  left: -120px;
+  top: 60px;
+}
+
+// ------ custom hamburger ------ //
+.custom_hamburger {
+  height: 80px;
+  text-align: center;
+  position: relative;
+  width: 80px;
+}
+.custom_hamburger span {
+  height: 4px;
+  width: 35px;
+  background: #fff;
+  display: block;
+  margin: 5px 8px;
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+.wrap_hamburger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.wrap-logo-right {
+  padding: unset !important;
+  height: 80px;
+}
+/* end custom hamburger */
+/* animation custom hamburger */
+// .dropdown.open .wrap_hamburger span:nth-child(1){
+//   transform: translateY(5px) rotate(45deg);
+// }
+// .dropdown.open .wrap_hamburger span:nth-child(2){
+//   transform: translateY(-5px) rotate(-45deg);
+// }
+// .dropdown.open .wrap_hamburger span:nth-child(3){
+//   display: none;
+// }
+/* end animation custom hamburger */
+
+//----- end custom hamburget ----//
+@media (max-width:991px) {
+  .nav-left {
+    width: 60%;
+  }
+  .nav-center {
+    width: 0;
+  }
+  .nav-right {
+    width: 40%;
+  }
+}
+
+// ------------ custom menu ------------- //
+.custom-close-menu {
+  text-align: center;
+  position: relative;
+}
+.custom-close-menu span {
+  height: 4px;
+  width: 35px;
+  background: #fff;
+  display: block;
+  margin: 5px 8px;
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+.custom-close-menu span:nth-child(1){
+  transform: translateY(5px) rotate(45deg);
+ }
+.custom-close-menu span:nth-child(2){
+  transform: translateY(-5px) rotate(-45deg);
+}
+.content-menu {
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  display: none;
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  transition: all 0.1s;
+}
+.wrap-menu {
+  position: relative;
+  height: 100%;
+  background: #fa8448;
+  width: 100%;
+}
+.align-menu {
+  position: absolute;
+  top: 10%;
+  height: 80%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+}
+.align-menu p a {
+  transition: all 0.2s;
+  font-weight: 100;
+  font-family: 'Montserrat Alternates',sans-serif;
+  font-size: 30px;
+  color: #fff;
+}
+.align-menu p {
+  margin-bottom: 0;
+}
+.align-menu p a:hover {
+  font-weight: 200;
+}
+.line {
+  background: #fff;
+  height: 4px;
+  width: 60px;
+  display: block;
+  margin: 15px auto 15px;
+  border-radius: 5px;
+}
+.close-menu {
+  position: absolute;
+  top: 40px;
+  cursor: pointer;
+  right: 40px;
+  color: #fff;
+}
+@media (max-width:768px) {
+  .align-menu{
+    position: absolute;
+    top: 15%;
+    height: 70%;
+    bottom: 15%;
+    /* background: red; */
+    left: 10%;
+    transform: unset;
+    padding: 10px;
+    width: 80%;
+    right: 10%;
+    overflow-y: scroll;
+  }
+  .line {
+    margin: 10px auto 10px;
+  }
+  .align-menu p a {
+    font-size: 24px;
+  }
+}
+// -------- END CUSTOM MENU  ----------- //
+// -------- END STAGE DRIVING  -------- //

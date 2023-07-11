@@ -1,0 +1,17 @@
+{
+  "name": "animate.css",
+  "main": "./animate.css",
+  "ignore": [
+    ".*",
+    "*.yml",
+    "Gemfile",
+    "Gemfile.lock",
+    "*.md"
+  ],
+  "_source": "nexus+http://nexus.justbit.it/repository/bower-all/animate.css",
+  "_target": "^3.5.2",
+  "_release": "3.5.2",
+  "version": "3.5.2",
+  "_originalSource": "animate.css",
+  "_direct": true
+}

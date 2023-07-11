@@ -1,0 +1,22 @@
+<div class="row">
+  <nb-card class="col-sm-12" [nbSpinner]="loading" nbSpinnerStatus="primary">
+    <nb-card-header>
+      Transazioni
+      <span>
+        <a nbButton status="danger" *ngIf="selectedTransactions && selectedTransactions.length > 0" (click)="deleteBulk()">ELIMINA</a>
+      </span>
+    </nb-card-header>
+  
+    <nb-card-body>
+      <div class="table-responsive">
+        <ng2-smart-table [settings]="settings" [source]="source" 
+          (edit)="onEdit($event)"
+          (delete)="onDelete($event)"
+          (userRowSelect)="transactionSelectRows($event.selected)">
+        </ng2-smart-table>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+

@@ -1,0 +1,73 @@
+/*
+* Template sign-in
+*/
+.wrap-img-user {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.user-img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+}
+.detail-form {
+  border-bottom: 1px solid #fa8448;
+  font-family: 'Helvetica Neue' !important;
+}
+.form-group-custom {
+  position: unset;
+  top: unset;
+  transform: unset;
+}
+.form-group-custom label {
+  font-weight: 300;
+  font-family: 'Helvetica Neue' !important;
+  color: #ccc;
+}
+.wrap-input .form-group {
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+}
+.detail-user {
+  position: relative;
+  min-height: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/** loader **/
+.wrap-loader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+.loader {
+  margin: auto;
+  border: 13px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 13px solid #F07C5E;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/** end loader **/
+@media (max-width:768px) {
+  .user-img {
+    height: 150px;
+    width: 150px;
+  }
+}

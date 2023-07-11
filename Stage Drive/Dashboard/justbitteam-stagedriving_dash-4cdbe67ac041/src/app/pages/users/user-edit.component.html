@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-md-6">
+    <form #myForm="ngForm" >
+      <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+        <nb-card-header>
+          Utente
+          <button type="submit" class="btn btn-primary pull-right" type="submit" [disabled]="!myForm.valid" (click)="save()">Salva</button>
+        </nb-card-header>
+      
+        <nb-card-body *ngIf="user">
+            <div class="form-group row">
+              <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" [(ngModel)]="user.email">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="inputFirstname" class="col-sm-3 col-form-label">Nome</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" name="firstname" [(ngModel)]="user.firstname">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputLastname" class="col-sm-3 col-form-label">Cognome</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" name="lastname" [(ngModel)]="user.lastname">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputGender" class="col-sm-3 col-form-label">Sesso</label>
+              <div class="col-sm-9">
+                  <nb-select placeholder="Gender" [(selected)]="user.gender">
+                    <nb-option value="male">Uomo</nb-option>
+                    <nb-option value="female">Donna</nb-option>
+                  </nb-select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputMobile" class="col-sm-3 col-form-label">Telefono</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputMobile" placeholder="Telefono" name="mobile" [(ngModel)]="user.mobile">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputCategory" class="col-sm-3 col-form-label">Categoria preferita</label>
+              <div class="col-sm-9">
+
+                <nb-select name="favCategory" placeholder="Categoria" [(selected)]="user.favCategory">
+                  <nb-option *ngFor="let cat of categories" value="{{cat.value}}">{{cat.title}}</nb-option>
+                </nb-select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStyle" class="col-sm-3 col-form-label">Stile</label>
+              <div class="col-sm-9">
+
+                <nb-select name="favStyle" placeholder="Stile" [(selected)]="user.favStyle">
+                  <nb-option *ngFor="let st of styles" value="{{st.value}}">{{st.title}}</nb-option>
+                </nb-select>
+              </div>
+            </div>
+          
+        </nb-card-body>
+      </nb-card>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+      <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+        <nb-card-header>
+          Veicolo
+        </nb-card-header>
+      
+        <nb-card-body *ngIf="user">
+            <div *ngIf="user.vehicles && user.vehicles.length > 0">
+                <dl>
+                  <dt>ID</dt>
+                  <dd>{{ user.vehicles[0].id }}</dd>
+                  <dt>Produttore</dt>
+                  <dd>{{ user.vehicles[0].manufacturer }}</dd>
+                  <dt>Modello</dt>
+                  <dd>{{ user.vehicles[0].name }}</dd>
+                  <dt>Caratteristiche</dt>
+                  <dd>{{ user.vehicles[0].features }}</dd>
+                  <dt>Data creazione</dt>
+                  <dd>{{ user.vehicles[0].created | date }}</dd>
+                </dl>
+
+            </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+      <nb-card-header>
+        Connessioni
+      </nb-card-header>
+    
+      <nb-card-body *ngIf="user">
+          <nb-list>
+            <nb-list-item *ngFor="let con of user.connections">
+              <dl>
+                <dt>ID</dt>
+                <dd>{{ con.id }}</dd>
+                <dt>Fornitore</dt>
+                <dd>{{ con.provider }}</dd>
+                <dt>Token</dt>
+                <dd>{{ con.token }}</dd>
+                <dt>Data scadenza</dt>
+                <dd>{{ con.expires | date }}</dd>
+              </dl>
+            </nb-list-item>
+          </nb-list>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+      <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+        <nb-card-header>
+          Ruoli
+        </nb-card-header>
+      
+        <nb-card-body *ngIf="user">
+          <span *ngFor="let grp of user.groups"><span class="badge badge-pill badge-primary">{{grp.name}}</span> </span>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+
+

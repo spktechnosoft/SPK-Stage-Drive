@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface MatthiasWeb\RealMediaLibrary\api\IFolder | PHPDoc Real Media Library</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?70c1d062672daa3f906b72e4f5d03d4bc5c4174d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">PHPDoc Real Media Library</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-MatthiasWeb.RealMediaLibrary.api.html" title="Summary of MatthiasWeb\RealMediaLibrary\api"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-MatthiasWeb.html">
+							MatthiasWeb<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-MatthiasWeb.RealMediaLibrary.html">
+							RealMediaLibrary<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-MatthiasWeb.RealMediaLibrary.api.html">
+							api						</a>
+							</li>
+								</ul></li></ul></li>
+					<li>
+						<a href="namespace-None.html">
+							None						</a>
+							</li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-MatthiasWeb.RealMediaLibrary.api.IFolder.html">IFolder</a></li>
+				<li><a href="class-MatthiasWeb.RealMediaLibrary.api.IMetadata.html">IMetadata</a></li>
+				<li><a href="class-MatthiasWeb.RealMediaLibrary.api.IUserSettings.html">IUserSettings</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Interface IFolder</h1>
+
+
+	<div class="description">
+	<p>This interface provides elementary methods for folder objects. All folder
+types (Folder, Collection, Gallery, ...) have implemented this interface.
+Also the root ("Unorganized") is a folder and implements this interface. Usually,
+the root acts as "-1" but you should use the <code><a href="function-_wp_rml_root.html">_wp_rml_root()</a></code> function to get the
+root id.</p>
+
+<p>If this interface does not provide an expected method, yet, have a look at the
+other API files. For example to create a folder use <code><a href="function-wp_rml_create.html">wp_rml_create()</a></code>.</p>
+
+<p><strong>Check if a variable is surely a IFolder interface object:</strong></p>
+
+<pre><span class="php-var">$folder</span> = wp_rml_get_object_by_id(<span class="php-num">5</span>);
+<span class="php-keyword1">if</span> (is_rml_folder(<span class="php-var">$folder</span>)) {
+     <span class="php-comment">// It is an interface implementation of IFolder</span>
+}</pre>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-MatthiasWeb.html">MatthiasWeb</a>\<a href="namespace-MatthiasWeb.RealMediaLibrary.html">RealMediaLibrary</a>\<a href="namespace-MatthiasWeb.RealMediaLibrary.api.html">api</a><br>
+		
+
+				<b>See:</b>
+				<code><a href="function-wp_rml_root_childs.html">wp_rml_root_childs()</a></code><br>
+				<b>See:</b>
+				<code><a href="function-wp_rml_get_object_by_id.html">wp_rml_get_object_by_id()</a></code><br>
+				<b>See:</b>
+				<code><a href="function-wp_rml_get_by_id.html">wp_rml_get_by_id()</a></code><br>
+				<b>See:</b>
+				<code><a href="function-wp_rml_get_by_absolute_path.html">wp_rml_get_by_absolute_path()</a></code><br>
+				<b>See:</b>
+				<code><a href="function-wp_rml_objects.html">wp_rml_objects()</a></code><br>
+				<b>See:</b>
+				<code><a href="function-is_rml_folder.html">is_rml_folder()</a></code><br>
+			<b>Located at</b> IFolder.interface.php		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="read" id="_read">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_read">#</a>
+			<code>read( <span>string <var>$order</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$orderby</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Fetch all attachment ids currently in this folder. It uses the
+default WP_Query to fetch the ids. You can also use the WP_Query like:</p>
+
+<pre><span class="php-var">$query</span> = <span class="php-keyword1">new</span> \WP_Query(<span class="php-keyword1">array</span>(
+    <span class="php-quote">'post_status'</span> =&gt; <span class="php-quote">'inherit'</span>,
+    <span class="php-quote">'post_type'</span> =&gt; <span class="php-quote">'attachment'</span>,
+    <span class="php-quote">'rml_folder'</span> =&gt; <span class="php-num">4</span>
+));</pre>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Fetch all attachment ids currently in this folder. It uses the
+default WP_Query to fetch the ids. You can also use the WP_Query like:</p>
+
+<pre><span class="php-var">$query</span> = <span class="php-keyword1">new</span> \WP_Query(<span class="php-keyword1">array</span>(
+    <span class="php-quote">'post_status'</span> =&gt; <span class="php-quote">'inherit'</span>,
+    <span class="php-quote">'post_type'</span> =&gt; <span class="php-quote">'attachment'</span>,
+    <span class="php-quote">'rml_folder'</span> =&gt; <span class="php-num">4</span>
+));</pre>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$order</var></dt>
+						<dd>The order "ASC" or "DESC"</dd>
+						<dt><var>$orderby</var></dt>
+						<dd>Use "rml" to get ids ordered by custom order</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int[] Post ids<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="hasChildren" id="_hasChildren">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_hasChildren">#</a>
+			<code>hasChildren( <span>string <var>$slug</var></span>, <span>boolean <var>$isSlug</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$returnObject</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Checks if this folder has a children with a given name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if this folder has a children with a given name.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$slug</var></dt>
+						<dd>Slug or Name of folder</dd>
+						<dt><var>$isSlug</var></dt>
+						<dd>Set it to false if $slug is not slugged</dd>
+						<dt><var>$returnObject</var></dt>
+						<dd>If set to true and a children with this name is found, then return the object for this folder</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							boolean<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getType" id="_getType">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getType">#</a>
+			<code>getType( )</code>
+
+			<div class="description short">
+				<p>Return the type for the given folder. For example: 0 = Folder, 1 = Collection, 2 = Gallery</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Return the type for the given folder. For example: 0 = Folder, 1 = Collection, 2 = Gallery</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getAllowedChildrenTypes" id="_getAllowedChildrenTypes">
+
+			<td class="attributes"><code>
+				 public 
+				boolean|int[]
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAllowedChildrenTypes">#</a>
+			<code>getAllowedChildrenTypes( )</code>
+
+			<div class="description short">
+				<p>Get all allowed children folder types.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get all allowed children folder types.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean|int[]<br>Array with allowed types or TRUE for all types allowed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getId" id="_getId">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getId">#</a>
+			<code>getId( )</code>
+
+			<div class="description short">
+				<p>Get the folder id.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the folder id.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getParent" id="_getParent">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getParent">#</a>
+			<code>getParent( )</code>
+
+			<div class="description short">
+				<p>Get the parent folder id.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the parent folder id.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getName" id="_getName">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getName">#</a>
+			<code>getName( )</code>
+
+			<div class="description short">
+				<p>Get the folder name.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the folder name.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							string<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getSlug" id="_getSlug">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getSlug">#</a>
+			<code>getSlug( <span>boolean <var>$force</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Returns a santitized title for the folder. If the slug is empty
+or forced to, it will be updated in the database, too.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns a santitized title for the folder. If the slug is empty
+or forced to, it will be updated in the database, too.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$force</var></dt>
+						<dd>Forces to regenerate the slug</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							string<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getPath" id="_getPath">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getPath">#</a>
+			<code>getPath( <span>string <var>$implode</var> = <span class="php-quote">&quot;/&quot;</span></span> )</code>
+
+			<div class="description short">
+				<p>Creates a absolute path without slugging' the names.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a absolute path without slugging' the names.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$implode</var></dt>
+						<dd>Delimitter for the folder names</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							string<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getAbsolutePath" id="_getAbsolutePath">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getAbsolutePath">#</a>
+			<code>getAbsolutePath( <span>boolean <var>$force</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Creates a absolute path. If the absolute path is empty
+or forced to, it will be updated in the database, too.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Creates a absolute path. If the absolute path is empty
+or forced to, it will be updated in the database, too.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$force</var></dt>
+						<dd>Forces to regenerate the absolute path</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							string<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getCnt" id="_getCnt">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getCnt">#</a>
+			<code>getCnt( <span>boolean <var>$forceReload</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Gets the count of the files in this folder.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the count of the files in this folder.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$forceReload</var></dt>
+						<dd>If true the count cache gets reloaded</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getChildren" id="_getChildren">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-MatthiasWeb.RealMediaLibrary.api.IFolder.html">MatthiasWeb\RealMediaLibrary\api\IFolder</a>[]</code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getChildren">#</a>
+			<code>getChildren( )</code>
+
+			<div class="description short">
+				<p>Get children of this folder.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get children of this folder.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-MatthiasWeb.RealMediaLibrary.api.IFolder.html">MatthiasWeb\RealMediaLibrary\api\IFolder</a>[]</code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getOrder" id="_getOrder">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getOrder">#</a>
+			<code>getOrder( )</code>
+
+			<div class="description short">
+				<p>Get the order number.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the order number.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getRestrictions" id="_getRestrictions">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getRestrictions">#</a>
+			<code>getRestrictions( )</code>
+
+			<div class="description short">
+				<p>Get the restrictions of this folder.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the restrictions of this folder.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							string[]<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getRestrictionsCount" id="_getRestrictionsCount">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getRestrictionsCount">#</a>
+			<code>getRestrictionsCount( )</code>
+
+			<div class="description short">
+				<p>Get the count of the restrictions.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get the count of the restrictions.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							int<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getChildrens" id="_getChildrens">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getChildrens">#</a>
+			<code class="deprecated">getChildrens( )</code>
+
+			<div class="description short">
+				<p>Returns childrens of this folder.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns childrens of this folder.</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							Use <a href="IFolder::getChildren()">IFolder::getChildren()</a>!<br>
+					</div>
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getPlain" id="_getPlain">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getPlain">#</a>
+			<code>getPlain( )</code>
+
+			<div class="description short">
+				<p>Gets a plain array with folder properties.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets a plain array with folder properties.</p>
+
+
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							array<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setRestrictions" id="_setRestrictions">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setRestrictions">#</a>
+			<code>setRestrictions( <span>string[] <var>$restrictions</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+			<div class="description short">
+				<p>Set restrictions for this folder. Allowed restrictions for folders:</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Set restrictions for this folder. Allowed restrictions for folders:</p>
+
+<ul> <li><strong>par</strong> Restrict to change the parent id</li> <li><strong>rea</strong> Restrict to rearrange the hierarchical levels of all subfolders (it is downwards all subfolders!) and can not be inherited</li> <li><strong>cre</strong> Restrict to create new subfolders</li> <li><strong>ins</strong> Restrict to insert/upload new attachments, automatically moved to root if upload</li> <li><strong>ren</strong> Restrict to rename the folder</li> <li><strong>del</strong> Restrict to delete the folder</li> <li><strong>mov</strong> Restrict to move files outside the folder</li>
+</ul>
+
+<p>You can append a ">" after each permission so it is inherited in each created subfolder: "cre>", "ins>", ...</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$restrictions</var></dt>
+						<dd>Array with restrictions</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							boolean<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="is" id="_is">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_is">#</a>
+			<code>is( <span>integer <var>$folder_type</var></span> )</code>
+
+			<div class="description short">
+				<p>Check if the folder object is a given type.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Check if the folder object is a given type.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$folder_type</var></dt>
+						<dd>The folder type</dd>
+					</dl></div>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+							boolean<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isRestrictFor" id="_isRestrictFor">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isRestrictFor">#</a>
+			<code>isRestrictFor( <span>string <var>$restriction</var></span> )</code>
+
+			<div class="description short">
+				<p>Checks if this folder has a special restriction.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if this folder has a special restriction.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$restriction</var></dt>
+						<dd>The restriction to check</dd>
+					</dl></div>
+
+
+
+					<h4>See</h4>
+					<div class="list">
+							IFolder::setRestrictions()<br>
+					</div>
+					<h4>Returns</h4>
+					<div class="list">
+							boolean<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isValidChildrenType" id="_isValidChildrenType">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isValidChildrenType">#</a>
+			<code>isValidChildrenType( <span>integer <var>$type</var></span> )</code>
+
+			<div class="description short">
+				<p>Checks if a given folder type is allowed in this folder.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if a given folder type is allowed in this folder.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$type</var></dt>
+						<dd>The type</dd>
+					</dl></div>
+
+
+
+					<h4>See</h4>
+					<div class="list">
+							IFolder::getAllowedChildrenTypes()<br>
+					</div>
+					<h4>Returns</h4>
+					<div class="list">
+							boolean<br>
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		PHPDoc Real Media Library API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

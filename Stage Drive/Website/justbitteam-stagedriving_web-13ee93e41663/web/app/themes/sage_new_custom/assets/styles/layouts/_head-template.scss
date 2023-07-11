@@ -1,0 +1,52 @@
+/*
+*    HEAD TEMPLATE
+*/
+.icon-template {
+  height: 120px;
+}
+.image-template, .detail-template {
+  //display: inline-block;
+}
+.name-template {
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.description-template {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.second-box {
+  padding-left: 10px;
+}
+.col-search {
+  min-height: 100px;
+  position: relative;
+  //visibility: hidden;
+}
+.form-group {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form-custom {
+  padding-left: 35px;
+  font-weight: bold;
+}
+.img-search {
+  height: 34px;
+  background: #e6e6e6;
+  width: 35px;
+  transform: translateY(34px);
+  border-radius: 5px;
+}
+.icon-search {
+  height: 30px;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+input#input_search:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}

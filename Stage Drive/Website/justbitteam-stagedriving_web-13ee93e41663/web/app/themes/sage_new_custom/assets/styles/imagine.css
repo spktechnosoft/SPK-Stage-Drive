@@ -1,0 +1,251 @@
+/*
+  oo                              oo
+  dP 88d8b.d8b. .d8888b. .d8888b. dP 88d888b. .d8888b.
+  88 88'`88'`88 88'  `88 88'  `88 88 88'  `88 88ooood8
+  88 88  88  88 88.  .88 88.  .88 88 88    88 88.  ...
+  dP dP  dP  dP `88888P8 `8888P88 dP dP    dP `88888P'
+  oooooooooooooooooooooooo~~~~.88~ooooooooooooooooooooo
+                          d8888P
+  A smart and efficient parallax plugin by Alex Grozav
+  from Pixevil built to make the web a better place.
+  @plugin  	Visuallax
+  @author 	Alex Grozav
+  @website  http://pixevil.com
+  @version 	1.0
+  @license 	Commercial */
+.imagine-canvas {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+  margin: 0;
+  height: 600px;
+  height: 100vh;
+}
+
+.imagine-animated {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.imagine-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.imagine-wrapper.imagine-horizontal {
+  height: 100%;
+  width: auto;
+}
+
+.imagine-auto {
+  height: auto;
+}
+
+.imagine-auto .imagine-content {
+  position: relative;
+  display: block;
+  height: auto;
+}
+
+.imagine-auto .imagine-content .imagine-content-container {
+  position: relative;
+  display: block;
+}
+
+.imagine-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  z-index: 99;
+}
+
+.imagine-content.imagine-content-center > .imagine-content-container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.imagine-content.imagine-content-top > .imagine-content-container {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.imagine-content.imagine-content-bottom > .imagine-content-container {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.imagine-canvas {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.imagine-layer {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.imagine-layer:nth-child(1) {
+  z-index: 9;
+}
+
+.imagine-layer:nth-child(2) {
+  z-index: 8;
+}
+
+.imagine-layer:nth-child(3) {
+  z-index: 7;
+}
+
+.imagine-layer:nth-child(4) {
+  z-index: 6;
+}
+
+.imagine-layer:nth-child(5) {
+  z-index: 5;
+}
+
+.imagine-layer:nth-child(6) {
+  z-index: 4;
+}
+
+.imagine-layer:nth-child(7) {
+  z-index: 3;
+}
+
+.imagine-layer:nth-child(8) {
+  z-index: 2;
+}
+
+.imagine-layer:nth-child(9) {
+  z-index: 1;
+}
+
+.imagine-background {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotateZ(0deg) translateZ(0);
+            transform: rotateZ(0deg) translateZ(0);
+  }
+  25% {
+    -webkit-transform: rotateZ(180deg) translateZ(0);
+            transform: rotateZ(180deg) translateZ(0);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) translateZ(0);
+            transform: rotateZ(180deg) translateZ(0);
+  }
+  75% {
+    -webkit-transform: rotateZ(360deg) translateZ(0);
+            transform: rotateZ(360deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translateZ(0);
+            transform: rotateZ(360deg) translateZ(0);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotateZ(0deg) translateZ(0);
+            transform: rotateZ(0deg) translateZ(0);
+  }
+  25% {
+    -webkit-transform: rotateZ(180deg) translateZ(0);
+            transform: rotateZ(180deg) translateZ(0);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) translateZ(0);
+            transform: rotateZ(180deg) translateZ(0);
+  }
+  75% {
+    -webkit-transform: rotateZ(360deg) translateZ(0);
+            transform: rotateZ(360deg) translateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) translateZ(0);
+            transform: rotateZ(360deg) translateZ(0);
+  }
+}
+
+@-webkit-keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.imagine-loader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: 4px solid #Fff;
+  top: 50%;
+  left: 50%;
+  border-radius: 3px;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: absolute;
+  -webkit-animation: loader 2s infinite ease;
+          animation: loader 2s infinite ease;
+  z-index: 99;
+}
+
+.imagine-loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  -webkit-animation: loader-inner 2s infinite ease-in;
+          animation: loader-inner 2s infinite ease-in;
+}
+
+/*# sourceMappingURL=../../maps/imagine/imagine.css.map */

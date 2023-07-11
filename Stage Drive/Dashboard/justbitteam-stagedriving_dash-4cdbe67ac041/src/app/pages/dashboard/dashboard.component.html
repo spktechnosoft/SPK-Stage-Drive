@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h1>Dashboard <a class="btn btn-primary btn-small float-right" target="_blank" href="https://grafana.stagedriving.com">Apri Analytics</a></h1>
+
+    <div class="row">
+      <div class="col-sm-12 text-left" style="margin: 12px 0 12px 0">
+        <label>Intervallo statistiche&nbsp;&nbsp;</label>
+        <input nbInput placeholder="Data inizio statistiche" [nbDatepicker]="startpicker" [(ngModel)]="startDate">
+        <nb-datepicker #startpicker></nb-datepicker>
+        &nbsp;
+        <input nbInput placeholder="Data fine statistiche" [nbDatepicker]="finishpicker" [(ngModel)]="finishDate">
+        <nb-datepicker #finishpicker></nb-datepicker>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+              <iframe [src]="getMetricUrl(14) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+              <iframe [src]="getMetricUrl(15) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+              <iframe [src]="getMetricUrl(16) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+              <iframe [src]="getMetricUrl(2) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(4) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-4">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(10) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" >
+          <h2>Eventi</h2>
+        </div>
+        <div class="col-md-6">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(23) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-6">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(9) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" >
+          <h2>Passaggi</h2>
+        </div>
+        <div class="col-md-6">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(18) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      
+        <div class="col-md-6">
+          <nb-card>
+            <nb-card-body>
+                <iframe [src]="getMetricUrl(21) | safe" width="100%" height="200" frameborder="0"></iframe>
+            </nb-card-body>
+          </nb-card>
+        </div>
+    </div>
+  </div>
+
+</div>

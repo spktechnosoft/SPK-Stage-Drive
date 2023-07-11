@@ -1,0 +1,21 @@
+api:
+  build: .
+  ports:
+   - "8089:8089"
+   - "9901:9901"
+  links:
+   - mysql:mysql
+   - redis:redis
+  environment:
+   - ENVIRONMENT=development
+   - MAIN_CLASS=com.stagedriving.Service
+mysql:
+  image: mysql
+  ports:
+   - "3333:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=admin
+redis:
+  image: redis
+  ports:
+   - "6379"

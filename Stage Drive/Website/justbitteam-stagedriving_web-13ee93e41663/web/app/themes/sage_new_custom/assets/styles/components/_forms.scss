@@ -1,0 +1,374 @@
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+.mymail-wrapper input, .mymail-wrapper div {
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 15px;
+  border: none;
+  margin-top: 15px;
+  border-radius: 5px;
+
+}
+.mymail-wrapper .submit-button {
+  background-color: #fd4d1f;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 15px 0 0;
+}
+
+.mymail-wrapper .submit-button:hover {
+  background-color: #0072C6;
+}
+
+.mymail-wrapper input {
+  color: #000;
+}
+
+// MailUP
+footer .widget_wpmailup_widget {
+  .widgettitle {
+    display: none;
+  }
+  .muDescription {
+    display: none;
+  }
+  .muField > label {
+    display: none;
+  }
+  .subscribeForm {
+  	color: transparent;
+  }
+  .subscribeForm fieldset{
+  	color: white;
+  	width: 100%;
+  	margin:0;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+  }
+  .subscribeForm input[type=text]{
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 13px;
+    padding: 6px 6px 5px 6px;
+    height: 32px;
+  }
+  .subscribeForm input[type=submit]{
+    border: 1px solid white;
+    color: $brand-primary;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0;
+    background-color: white;
+    width: 100%;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0;
+    height: 32px;
+  }
+  .subscribeForm p.muField {
+    float: left;
+    width: 70%;
+    margin: 0;
+  }
+  .subscribeForm p.muSubmit {
+    float: left;
+    width: 30%;
+    margin: 0;
+    font-size: 18px;
+  }
+  .subscribeForm .show-response {
+    position: absolute;
+    top: 166px;
+    left: 0;
+  }
+  .subscribeForm p.muTermsCheckbox {
+    position: absolute;
+    top: 115px;
+    font-size: 11px;
+  }
+  .subscribeForm p.muTerms {
+    position: absolute;
+    top: 135px;
+    font-size: 10px;
+  }
+  .subscribeForm p {
+  	padding:0;
+  	margin: 0 10px 0 0;
+  }
+  .subscribeForm h3 {
+  	padding:0;
+  	margin: 10px 0 0 10px;
+  	font-size: 12px;
+  }
+  .subscribeForm fieldset img {
+  	margin-left: 10px;
+  }
+  .loading-img {
+    display: none !important;
+  }
+    /*setting placehyolder color for each browser*/
+  .subscribeForm input[type=text]::-webkit-input-placeholder { /* WebKit browsers */
+      color: white;
+  }
+  .subscribeForm input[type=text]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: white;/*#909;*/
+     opacity:  1;
+  }
+  .subscribeForm input[type=text]::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: white;
+     opacity:  1;
+  }
+  .subscribeForm input[type=text]:-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: white;
+  }
+  .subscribeForm input[type=text].placeholdersjs{	/*For any unsupported browser*/
+  	color: white;
+  }
+  @media (max-width: $screen-md-min) {
+    .subscribeForm .show-response {
+      position: absolute;
+      top: 150px;
+      left: 14px;
+    }
+
+    .subscribeForm input[type=text]{
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .subscribeForm input[type=submit]{
+      font-size: 14px;
+    }
+
+    .subscribeForm p.muTermsCheckbox {
+      position: absolute;
+      top: 88px;
+      font-size: 11px;
+    }
+    .subscribeForm p.muTerms {
+      position: absolute;
+      top: 106px;
+      font-size: 10px;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .subscribeForm .show-response {
+      top: 148px;
+    }
+    .subscribeForm input[type=text]{
+      font-size: 14px;
+      padding: 4px;
+    }
+    .subscribeForm input[type=submit]{
+      font-size: 12px;
+    }
+    .subscribeForm p.muTermsCheckbox {
+      position: absolute;
+      top: 82px;
+      font-size: 11px;
+    }
+    .subscribeForm p.muTerms {
+      position: absolute;
+      top: 104px;
+      font-size: 10px;
+    }
+  }
+}
+article .widget_wpmailup_widget {
+  width: 100%;
+  //margin: auto;
+
+  .widgettitle {
+    display: none;
+  }
+  .muDescription {
+    display: none;
+  }
+  .muField > label {
+    display: none;
+  }
+  .subscribeForm {
+  	color: transparent;
+  }
+  .subscribeForm fieldset{
+  	color: #373737;
+  	width: 100%;
+  	margin:0;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+  }
+  .subscribeForm input[type=text]{
+    width: 100%;
+    color: #373737;
+    background-color: transparent;
+    border: 1px solid $brand-primary;
+    font-size: 13px;
+    padding: 6px 6px 5px 6px;
+    height: 32px;
+  }
+  .subscribeForm input[type=submit]{
+    border: 1px solid #373737;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+    //width: 100%;
+    padding: 0;
+    height: 32px;
+    padding: 0 50px;
+
+    font-family: "lato-bold";
+    text-align: center;
+    color: #002D65;
+    font-size: 15px;
+    line-height: 26px;
+    border: 1px solid #002D65;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+  }
+  .subscribeForm input[type=submit]:hover {
+    outline: 0;
+    background: #002D65;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .subscribeForm p.muField {
+    // float: left;
+    // width: 70%;
+    // margin: 0;
+  }
+  .subscribeForm p.muSubmit {
+    // float: left;
+    // width: 30%;
+    // margin: 0;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  .subscribeForm .show-response {
+    // position: absolute;
+    // top: 166px;
+    // left: 0;
+  }
+  .subscribeForm p.muTermsCheckbox {
+    // position: absolute;
+    // top: 115px;
+    font-size: 11px;
+  }
+  .subscribeForm p.muTerms {
+    // position: absolute;
+    // top: 135px;
+    font-size: 10px;
+  }
+  .subscribeForm p {
+  	padding:0;
+  	margin: 0 10px 0 0;
+  }
+  .subscribeForm h3 {
+  	padding:0;
+  	margin: 10px 0 0 10px;
+  	font-size: 12px;
+  }
+  .subscribeForm fieldset img {
+  	margin-left: 10px;
+  }
+  .loading-img {
+    display: none !important;
+  }
+    /*setting placehyolder color for each browser*/
+  .subscribeForm input[type=text]::-webkit-input-placeholder { /* WebKit browsers */
+      color: #373737;
+  }
+  .subscribeForm input[type=text]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: #373737;/*#909;*/
+     opacity:  1;
+  }
+  .subscribeForm input[type=text]::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: #373737;
+     opacity:  1;
+  }
+  .subscribeForm input[type=text]:-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: #373737;
+  }
+  .subscribeForm input[type=text].placeholdersjs{	/*For any unsupported browser*/
+  	color: #373737;
+  }
+  @media (max-width: $screen-md-min) {
+    width: 100%;
+
+    .subscribeForm .show-response {
+      // position: absolute;
+      // top: 150px;
+      // left: 14px;
+    }
+
+    .subscribeForm input[type=text]{
+      font-size: 12px;
+      padding: 4px;
+    }
+
+    .subscribeForm input[type=submit]{
+      font-size: 14px;
+    }
+
+    .subscribeForm p.muTermsCheckbox {
+      // position: absolute;
+      // top: 88px;
+      font-size: 11px;
+    }
+    .subscribeForm p.muTerms {
+      // position: absolute;
+      // top: 106px;
+      font-size: 10px;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    width: 100%;
+
+    .subscribeForm .show-response {
+      // top: 148px;
+    }
+    .subscribeForm input[type=text]{
+      font-size: 14px;
+      padding: 4px;
+    }
+    .subscribeForm p.muSubmit{
+      text-align: center;
+    }
+    .subscribeForm input[type=submit]{
+      font-size: 12px;
+      margin: auto;
+    }
+    .subscribeForm p.muTermsCheckbox {
+      // position: absolute;
+      // top: 82px;
+      font-size: 11px;
+    }
+    .subscribeForm p.muTerms {
+      // position: absolute;
+      // top: 104px;
+      font-size: 10px;
+    }
+  }
+}

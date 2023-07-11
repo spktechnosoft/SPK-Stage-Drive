@@ -1,0 +1,15 @@
+/*
+* Template modify-user
+*/
+
+.container-modify-user {
+  min-height:80vh;
+  position:relative;
+}
+.center-box {
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+  transform:translateY(-50%)
+}

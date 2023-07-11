@@ -1,0 +1,237 @@
+<div class="row">
+  <div class="col-md-8">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+      <nb-card-header>
+        <span>Evento</span>
+        <button type="submit" class="btn btn-primary pull-right" type="submit" [disabled]="imgLoading || loading" (click)="save()">Salva</button>
+      </nb-card-header>
+    
+      <nb-card-body *ngIf="event">
+        <form #myForm="ngForm" >
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-3 col-form-label">Nome</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name" [(ngModel)]="event.name">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputStart" class="col-sm-3 col-form-label">Data inizio</label>
+            <div class="col-sm-7">
+              <input [nbDatepicker]="datepickerStart" class="form-control" id="inputStart" placeholder="GG/MM/AAAA" name="start" [(ngModel)]="startDate">
+              <nb-datepicker #datepickerStart></nb-datepicker>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="startTime" placeholder="HH:mm" name="startTime" [(ngModel)]="startTime">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputFinish" class="col-sm-3 col-form-label">Data fine</label>
+            <div class="col-sm-7">
+              <input [nbDatepicker]="datepickerFinish" class="form-control" id="inputFinish" placeholder="GG/MM/AAAA" name="finish" [(ngModel)]="finishDate">
+              <nb-datepicker #datepickerFinish></nb-datepicker>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="finishTime" placeholder="HH:mm" name="finishTime" [(ngModel)]="finishTime">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputAddress" class="col-sm-3 col-form-label">Indirizzo</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputAddress" placeholder="Indirizzo" name="address" [(ngModel)]="event.address">
+              <button nbButton size="small" status="primary" (click)="addLocation = true">Cerca indirizzo</button>
+              <ngx-search *ngIf="addLocation" (positionChanged)="updateLocation($event)"></ngx-search>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputCategory" class="col-sm-3 col-form-label">Categoria</label>
+            <div class="col-sm-9">
+
+              <nb-select name="category" placeholder="Categoria" [(selected)]="event.category">
+                <nb-option *ngFor="let cat of categories" value="{{cat.value}}">{{cat.title}}</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputStatus" class="col-sm-3 col-form-label">Stato pubblicazione</label>
+            <div class="col-sm-9">
+              <nb-select placeholder="" [(selected)]="event.status">
+                <nb-option value="draft">Bozza</nb-option>
+                <nb-option value="published">Pubblico</nb-option>
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputDescription" class="col-sm-3 col-form-label">Descrizione</label>
+            <div class="col-sm-9">
+              <ckeditor [config]="{ extraPlugins: 'divarea', height: '320' }" name="description" [(ngModel)]="event.description"></ckeditor>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label for="inputCity" class="col-sm-3 col-form-label">Città</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputCity" placeholder="Città" name="city" [(ngModel)]="event.city">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputTown" class="col-sm-3 col-form-label">Town</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputTown" placeholder="Town" name="town" [(ngModel)]="event.town">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputZipCode" class="col-sm-3 col-form-label">CAP</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputZipCode" placeholder="CAP" name="zipCode" [(ngModel)]="event.zipcode">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputCountry" class="col-sm-3 col-form-label">Nazione</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputCountry" placeholder="Nazione" name="country" [(ngModel)]="event.country">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputOrganizer" class="col-sm-3 col-form-label">Organizzatore</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputOrganizer" placeholder="Organizzatore" name="organizer" [(ngModel)]="event.organizer">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputParking" class="col-sm-3 col-form-label">Parcheggio</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputParking" placeholder="Parcheggio" name="parking" [(ngModel)]="event.parking">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputWebsite" class="col-sm-3 col-form-label">Sito Web</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputWebsite" placeholder="Sito Web" name="website" [(ngModel)]="event.website">
+            </div>
+          </div>
+
+          <style>
+            .drop-box {
+              background: #F8F8F8;
+              border: 5px dashed #DDD;
+              width: 100%;
+              text-align: center;
+              display: inline-block;
+              cursor: pointer;
+            }
+            .drop-box:hover {
+              background: #e8e8e8;
+            }
+            .inputfile {
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              /* overflow: hidden; */
+              position: absolute;
+              /* z-index: -1; */
+              left: 0;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              cursor: pointer;
+            }
+            .trash {
+              position: absolute;
+              /* left: 0; */
+              z-index: 10;
+              top: 6px; 
+              /* width: 100px; */
+              /* height: 100px; */
+              display: block;
+              /* opacity: 0; */
+              background: 0 0;
+              right: 20px;
+              background-color: lightgray;
+              width: 20px;
+              height: 20px;
+              padding-right: 4px;
+          }
+          .cropper-box {
+            background-color:#fafafa; 
+            border: 1px solid #dadada; 
+            margin-top:20px; 
+            margin-bottom: 20px;
+          }
+            
+          </style>
+
+          <div class="form-group row">
+            <label for="inputFinish" class="col-sm-3 col-form-label">Immagini</label>
+            <div class="col-sm-9" [nbSpinner]="imgLoading" nbSpinnerStatus="primary">
+              <div class="row">
+                <div class="col-sm-12">
+                    
+                    <div class="row cropper-box" *ngIf="!imgURL">
+                      <image-cropper
+                        [imageChangedEvent]="imageChangedEvent"
+                        [maintainAspectRatio]="true"
+                        [aspectRatio]="1200 / 630"
+                        [resizeToWidth]="1200"
+                        format="png"
+                        (imageCropped)="imageCropped($event)"
+                        (imageLoaded)="imageLoaded()"
+                        (cropperReady)="cropperReady()"
+                        (loadImageFailed)="loadImageFailed()"
+                        style="width: 100%">
+                      </image-cropper>
+                      <div class="col-md-12 text-center" style="margin: 20px;">
+                          <button nbButton size="small" status="primary" *ngIf="croppedImage" (click)="saveImage()">SALVA IMMAGINE</button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 drop-box">
+                        <div class="icon" style="padding-top: 0; font-size: 61px;">+</div>
+                        <span style="color:red;" *ngIf="message">{{message}}</span>
+                        <input #file class="inputfile" type="file" accept='image/*' (change)="fileChangeEvent($event)" />
+                      </div>
+
+                      <div class="col-md-6" *ngFor="let image of event.images; index as i" style="background-color: #fafafa;border: 1px solid #dadada;">
+                          <img [src]="image.uri" style="width: 100%">
+                          <div class="trash" (click)="deleteImage(i)" >
+                              <p class="close" >×</p>
+                          </div>
+                      </div>
+
+                      <!--img [src]="imgURL" *ngIf="imgURL" style="width: 60%"-->
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <!-- <div class="col-md-6">
+      <nb-card [nbSpinner]="transactionsLoading" nbSpinnerStatus="primary">
+        <nb-card-header>
+          Transazioni
+        </nb-card-header>
+      
+        <nb-card-body *ngIf="event">
+          
+        </nb-card-body>
+      </nb-card>
+    </div> -->
+</div>
+
+

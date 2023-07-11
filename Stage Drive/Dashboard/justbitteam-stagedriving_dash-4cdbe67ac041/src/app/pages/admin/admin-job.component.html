@@ -1,0 +1,45 @@
+<div class="row">
+
+  <div class="col-md-12">
+
+    <div class="row" *ngIf="job">
+      <div class="col-md-12">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+          <!-- <nb-card-header>
+            <span>{{id}}</span>
+          </nb-card-header> -->
+          <nb-card-body>
+              <dl>
+                <dt>ID</dt>
+                <dd>{{job.id}}</dd>
+                <dt>Queue</dt>
+                <dd>{{job.queue}}</dd>
+                <dt>Payload</dt>
+                <dd>{{job.payload}}</dd>
+              </dl>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+    
+
+    <div class="row" *ngIf="logs">
+      <div class="col-md-12">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+          <nb-card-header>
+            <span>Log</span>
+          </nb-card-header>
+          <nb-card-body>
+            <nb-list>
+              <nb-list-item *ngFor="let log of logs">
+                <small>{{log.level}} - </small>
+                <small>{{ log.created | date:'short' }}</small> - <span class="ng-binding">{{log.message}}</span>
+              </nb-list-item>
+            </nb-list>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </div>
+
+</div>

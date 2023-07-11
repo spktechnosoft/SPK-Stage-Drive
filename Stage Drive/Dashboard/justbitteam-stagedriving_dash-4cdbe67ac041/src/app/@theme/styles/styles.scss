@@ -1,0 +1,49 @@
+// themes - our custom or/and out of the box themes
+@import 'themes';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+@import '~@nebular/bootstrap/styles/globals';
+// ...
+
+// global app font size
+@import './font-size';
+
+// loading progress bar theme
+@import './pace.theme';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+  @include nb-bootstrap-global();
+
+  // loading progress bar
+  @include ngx-pace-theme();
+};
+
+// overrides
+nb-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  padding-top: nb-theme(card-header-with-select-padding-top);
+  padding-bottom: nb-theme(card-header-with-select-padding-bottom);
+
+  .btn-primary {
+    margin-left: 8px;
+  }
+}
+
+nb-window.custom-window {
+  height: 100%;
+  overflow-y: auto;
+
+  >nb-card {
+    height: 100%;
+  }
+}

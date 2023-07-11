@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2NLA7HCTSZ.com.stagedriving.StageDriving",
+        "paths": [ "/events", "/events/*", "/rides/*" ]
+      }
+    ]
+  }
+}

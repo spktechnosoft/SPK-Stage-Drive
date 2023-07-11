@@ -1,0 +1,27 @@
+<div class="row">
+
+  <nb-card class="col-sm-12" [nbSpinner]="loading" nbSpinnerStatus="primary">
+    <nb-card-header>
+      <span>Catalogo</span>
+      <span>
+        <a nbButton status="primary" outline href="#/pages/catalogs/new">CREA CATALOGO</a>
+        <a nbButton status="secondary" outline (click)="requestBundleUpdate()">AGGIORNA BUNDLE</a>
+      </span>
+    </nb-card-header>
+  
+    <nb-card-body>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="table-responsive">
+            <ng2-smart-table [settings]="settings" [source]="source" 
+              (edit)="onEdit($event)"
+              (delete)="onDelete($event)">
+            </ng2-smart-table>
+          </div>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+

@@ -1,0 +1,131 @@
+<div class="row">
+  <div class="col-md-12">
+    <!-- <div class="row">
+      <div class="col-md-8">
+        <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+          <nb-card-header>
+            Passaggio
+          </nb-card-header>
+        
+          <nb-card-body *ngIf="ride">
+            <form #myForm="ngForm" >
+              <div class="form-group row">
+                <label for="inputName" class="col-sm-3 col-form-label">Nome</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name" [(ngModel)]="ride.name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputGoingDeparture" class="col-sm-3 col-form-label">Data partenza</label>
+                <div class="col-sm-9">
+                  <input [nbDatepicker]="datepickerGoingDeparture" class="form-control" id="inputStart" placeholder="GG/MM/AAAA" name="start" [(ngModel)]="goingDepartureDate">
+                  <nb-datepicker #datepickerGoingDeparture></nb-datepicker>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputFinish" class="col-sm-3 col-form-label">Data fine</label>
+                <div class="col-sm-9">
+                  <input [nbDatepicker]="datepickerFinish" class="form-control" id="inputFinish" placeholder="GG/MM/AAAA" name="finish" [(ngModel)]="ride.finish">
+                  <nb-datepicker #datepickerFinish></nb-datepicker>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputAddress" class="col-sm-3 col-form-label">Indirizzo</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Indirizzo" name="address" [(ngModel)]="ride.address">
+                  <button nbButton size="small" status="primary" (click)="addLocation = true">Cerca indirizzo</button>
+                  <ngx-search *ngIf="addLocation" (positionChanged)="updateLocation($event)"></ngx-search>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputCategory" class="col-sm-3 col-form-label">Categoria</label>
+                <div class="col-sm-9">
+                  <nb-select placeholder="Categoria" [(selected)]="ride.category">
+                    <nb-option value="male">Maschile</nb-option>
+                    <nb-option value="female">Femminile</nb-option>
+                  </nb-select>
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <label for="inputCity" class="col-sm-3 col-form-label">Città</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputCity" placeholder="Città" name="city" [(ngModel)]="ride.city">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputZipCode" class="col-sm-3 col-form-label">CAP</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputZipCode" placeholder="CAP" name="zipCode" [(ngModel)]="ride.zipcode">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputCountry" class="col-sm-3 col-form-label">Nazione</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputCountry" placeholder="Nazione" name="country" [(ngModel)]="ride.country">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputOrganizer" class="col-sm-3 col-form-label">Organizzatore</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputOrganizer" placeholder="Organizzatore" name="organizer" [(ngModel)]="ride.organizer">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputParking" class="col-sm-3 col-form-label">Parcheggio</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputParking" placeholder="Parcheggio" name="parking" [(ngModel)]="ride.parking">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputWebsite" class="col-sm-3 col-form-label">Sito Web</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="inputWebsite" placeholder="Sito Web" name="website" [(ngModel)]="ride.website">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputFinish" class="col-sm-3 col-form-label">Immagini</label>
+                <div class="col-sm-9" [nbSpinner]="imgLoading" nbSpinnerStatus="primary">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <span style="color:red;" *ngIf="message">{{message}}</span>
+                      <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+                    </div>
+                  </div>
+                  <div class="row">  
+                    <div class="col-sm-12">
+                        <img [src]="imgURL" height="200" *ngIf="imgURL">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <div class="offset-sm-3 col-sm-9">
+                  <button type="submit" class="btn btn-primary" type="submit" [disabled]="!myForm.valid || imgLoading || loading" (click)="save()">Save</button>
+                </div>
+              </div>
+            </form>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <ngx-ride-passengers></ngx-ride-passengers>
+      </div>
+    </div>
+  </div>
+</div>
+
+

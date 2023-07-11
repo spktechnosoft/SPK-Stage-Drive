@@ -1,0 +1,6 @@
+#! /bin/sh
+
+# -Xms$JVM_MIN_MEMORY -Xmx$JVM_MAX_MEMORY
+
+java -classpath ./dist/lib/*:./dist/lib/libs/* $MAIN_CLASS server ./confs/config.yaml
+

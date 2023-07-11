@@ -1,0 +1,380 @@
+
+$grigio_chiaro : #f0f0f0;
+$grigio_scuro : #969696;
+$rosa_sd : $orange;
+.btn:focus{
+    outline: none !important;
+}
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+.error {
+    color: red;
+}
+#page-user{
+    .head-user{
+        background-color:$grigio_scuro;
+        .image-container{
+            text-align: center;
+            margin: 10px 0 10px 0px;
+            .img-profile{
+                .label {
+                    cursor: pointer;
+                    display: block;
+                  }
+                  .progress {
+                    display: none;
+                    margin-bottom: 1rem;
+                  }
+                  .alert {
+                    display: none;
+                  }
+                  .img-container img {
+                    max-width: 100%;
+                  }
+                #img-profile{
+                    .rounded-circle {
+                        border-radius: 50px;;
+                    }
+                    // .icon{
+                    //     position: absolute;
+                    //     top: 9px;
+                    //     right: 144px;
+                    //     @media screen and (min-width: 362px) {
+                    //         right: 144px;
+                    //     }
+                    // }
+                    &:after{
+                        content: '+';
+                        position: absolute;
+                        font-size: 17px;
+                        margin-right: 0px;
+                        top: 10px;
+                        background-color: $orange;
+                        width: 17px;
+                        border-radius: 9px;
+                    }
+                }
+            }
+
+
+            .user-name {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .list-group-item:last-child {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .list-group-item {
+        margin-bottom: 1;
+        border-bottom: 1px solid $grigio_scuro;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        &.title {
+            background: $grigio_scuro;
+        }
+        &.no_border{
+            border-bottom: 1px solid white;
+        }
+        .no-icon{
+            margin: 6px 0px 6px 0;
+        }
+
+        .img-svg {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 6px;
+        }
+        .description-modal.helvetica-neue{
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .arrow{
+            display: inline;
+            float: right;
+            vertical-align: middle;
+            margin: 12px;
+            color: $grigio_scuro;
+        }
+    }
+
+}
+#update-user{
+    .titolo-driver {
+        text-align: center;
+        padding-bottom: 33px;
+        color: $orange;
+    }
+    .form-group {
+        position: relative !important;
+        .form-control{
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-radius: 0;
+            border-bottom: 1px solid $rosa_sd;
+            box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+            font-size: 16px;
+            font-weight: 700;
+            padding: 6px 0px;
+            &.red_border{
+                border-bottom: 1px solid red;
+                color:red;
+            }
+        }
+        select{
+            border-radius: 0;
+            -webkit-appearance: none;
+        }
+        label {
+            font-weight: 500;
+        }
+        .btn-car{
+            color: $orange;
+            font-size: 32px;
+            font-weight: 500;
+            margin: 0 4px 0 0px;
+            &.active{
+                box-shadow: inset 0 3px 5px $orange;
+            }
+        }
+
+
+    }
+    .cont_button{
+        text-align: center;
+
+            .btn-driver{
+                margin: 0 0 45px 0;
+                color: red;
+                &:focus{
+                    outline: 0;
+                }
+            }
+    }
+    .cont_swithc{
+        text-align: right;
+        margin: 31px 0px 0 0;
+        // Colors
+            $brand-primary: $orange;
+            $brand-secondary: #ff8300;
+            $gray: $grigio_scuro;
+            $gray-light: lighten($gray, 15%);
+            $gray-lighter: lighten($gray, 30%);
+
+            // Button Colors
+            $btn-default-color: $gray;
+            $btn-default-bg: $gray-lighter;
+
+            // Toggle Sizes
+            $toggle-default-size: 1.5rem;
+            $toggle-default-label-width: 4rem;
+            $toggle-default-font-size: .75rem;
+
+
+            // General Styles for Demo
+
+
+
+            .btn-toggle {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @media screen and (max-width: 600px) {
+              .btn-toggle {
+                height: 2.5rem !important;
+                width: 5rem !important;
+              }
+              .btn-toggle.active .handle{
+                left: 3.0625rem !important;
+              }
+              .btn-toggle .handle{
+                width: 1.375rem !important;
+                height: 1.375rem !important;
+              }
+            }
+
+
+
+
+            // Mixin for Switch Colors
+            // Variables: @color, @bg, @active-bg
+            @mixin toggle-color($color: $btn-default-color, $bg: $btn-default-bg, $active-bg: $brand-primary) {
+            color: $color;
+            background: $bg;
+            &:before,
+            &:after {
+                color: $color;
+            }
+            &.active {
+                background-color: $active-bg;
+            }
+            }
+
+            // Mixin for Default Switch Styles
+            // Variables: @size, @margin, @color, @bg, @active-bg, @font-size
+            @mixin toggle-mixin($size: $toggle-default-size, $margin: $toggle-default-label-width, $font-size: $toggle-default-font-size) {
+            // color: @color;
+            // background: @bg;
+            margin: 0 ;
+            // @media screen and (min-width: 750px) {
+            // margin: 0 $margin;
+            // }
+            padding: 0;
+            position: relative;
+            border: none;
+            height: $size;
+            width: $size * 2;
+            border-radius: $size;
+
+            &:focus,
+            &.focus {
+                &,
+                &.active {
+                outline: none;
+                }
+            }
+
+            &:before,
+            &:after {
+                line-height: $size;
+                width: $margin;
+                text-align: left;
+                font-weight: 600;
+                // color: @color;
+                font-size: $font-size;
+                //text-transform: uppercase;
+                letter-spacing: 2px;
+                position: absolute;
+                bottom: 0;
+                transition: opacity .25s;
+            }
+            &#mostra:before {
+                content: 'Mostra la mia attività agli altri utenti';
+                left: -27rem;
+                font-size: 1.2rem;
+                @media screen and (min-width: 315px) {
+                  left: -75vw;
+                  font-size: 0.80rem;
+                  top: -10px;
+                }
+                @media screen and (min-width: 340px) {
+                  left: -75vw;
+                  font-size: 0.85rem;
+                  top: -10px;
+                }
+                @media screen and (min-width: 375px) {
+                    left: -75vw;
+                    top: -10px;
+                    font-size: 1rem;
+                }
+                @media screen and (min-width: 450px) {
+                    left: -75vw;
+                    font-size: 1.2rem;
+                    top: -10px;
+                }
+                @media screen and (min-width: 650px) {
+                    left: -53rem;
+                    font-size: 2rem;
+                    font-weight: 400;
+                }
+                @media screen and (min-width: 750px) {
+                    left: -63rem;
+
+                }
+            }
+            &#offerte:before {
+                white-space: pre;
+                content: 'Voglio ricevere offerte e comunicazioni \A commerciali';
+                left: -27rem;
+                font-size: 1.2rem;
+                line-height:1;
+                @media screen and (min-width: 315px) {
+                  left: -75vw;
+                  font-size: 0.80rem;
+                  top: 5px;
+                }
+                @media screen and (min-width: 340px) {
+                  left: -75vw;
+                  font-size: 0.85rem;
+                  top: 5px;
+                }
+                @media screen and (min-width: 375px) {
+                    left: -75vw;
+                    top: 0px;
+                    font-size: 1rem;
+                }
+                @media screen and (min-width: 450px) {
+                    left: -75vw;
+                    font-size: 1.2rem;
+                    top: 0px;
+                }
+                @media screen and (min-width: 650px) {
+                    left: -53rem;
+                    font-size: 2rem;
+                    font-weight: 400;
+                }
+                @media screen and (min-width: 750px) {
+                    left: -63rem;
+
+                }
+            }
+            //   &:after {
+            //     content: 'On';
+            //     right: -$margin;
+            //     opacity: .5;
+            //   }
+
+            > .handle {
+                position: absolute;
+                top: ($size * .25) / 2;
+                left: ($size * .25) / 2;
+                width: $size * .75;
+                height: $size * .75;
+                border-radius: $size * .75;
+                background: #fff;
+                transition: left .25s;
+            }
+            &.active {
+                transition: background-color .25s;
+                > .handle {
+                left: $size + (($size * .25) / 2);
+                transition: left .25s;
+                }
+                &:before {
+                opacity: .5;
+                }
+                &:after {
+                opacity: 1;
+                }
+            }
+            }
+
+
+
+            // Apply Mixin to different sizes & colors
+            .btn-toggle {
+
+                @include toggle-mixin;
+                @include toggle-color;
+
+            &.btn-lg {
+                @include toggle-mixin($size: 4.5rem, $font-size: 2rem, $margin: 7rem);
+            }
+            &.btn-secondary {
+                @include toggle-color($active-bg:$brand-secondary);
+            }
+            }
+
+                }
+
+}

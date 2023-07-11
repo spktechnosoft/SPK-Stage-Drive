@@ -1,0 +1,50 @@
+/*
+* Template-abuse
+*/
+
+.cont-forum {
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.accessToken {
+  display: none;
+}
+.cont-forum label {
+  font-family: 'Montserrat Alternates',sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #707070;
+  width: 100%;
+}
+.cont-forum input[type=text], .cont-forum input[type=email]  {
+  border-bottom: 1px solid #fa8448;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 16px;
+  height: 34px;
+  width: 100%;
+  outline: none;
+}
+.cont-forum input[type=submit] {
+  outline: none;
+}
+.cont-forum textarea {
+  border-bottom: 1px solid #fa8448;
+  border-left: 1px solid #fa8448;
+  border-right: 1px solid #fa8448;
+  border-top: 1px solid #fa8448;
+  outline: none;
+  margin-top:10px;
+  width: 100%;
+  padding: 5px;
+}
+.title-form {
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 500;
+  color: #fa8448;
+}
+.description-form {
+  margin-bottom: 40px;
+}

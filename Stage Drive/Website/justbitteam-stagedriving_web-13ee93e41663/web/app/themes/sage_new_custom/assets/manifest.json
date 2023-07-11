@@ -1,0 +1,95 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/ajax_request.js",
+        "scripts/cookies.js",
+        "scripts/open-close-box.js",
+        "scripts/masonry.filter.js",
+        "scripts/custom.js",
+        "scripts/main.js",
+        "scripts/transform-icons.js",
+        "scripts/url-search-params.js",
+        "scripts/lovetester/lovetester-game.js"
+      ],
+      "bower": [
+        "bootstrap-sass",
+        "fancybox",
+        "slick-carousel",
+        "masonry",
+        "animate.css",
+        "jquery-mousewheel",
+        "malihu-custom-scrollbar-plugin",
+        "jquery.countdown",
+        "jquery.scrollbar",
+        "dropzone",
+        "jquery.scrollTo",
+        "jquery.steps",
+        "jquery-validation",
+        "noty"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss",
+        "css/loading/loading.css",
+        "css/loading/loading-btn.css",
+        "../bower_components/jquery.steps/demo/css/jquery.steps.css",
+        "../bower_components/noty/lib/noty.css"
+      ],
+      "main": true
+    },
+    "user_ajax.js": {
+      "files": [
+        "scripts/user_ajax_request.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    },
+    "jquery-ui.js": {
+      "bower": ["jquery-ui"]
+    },
+    "spin.min.js": {
+      "files": [
+        "scripts/spin.min.js",
+        "scripts/jquery.spin.js"
+      ]
+    },
+    "jquery.easing.js": {
+      "files": [
+        "scripts/jquery.easing.1.3.js"
+      ]
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "jquery.fullPage.js": {
+      "bower": ["fullpage.js"]
+    },
+    "jquery.ui.touch-punch.js": {
+      "bower": ["jquery-touch-punch"]
+    },
+    "wow.min.js": {
+      "bower": ["wow"]
+    },
+    "jquery.magnific-popup.js": {
+      "bower": ["magnific-popup"]
+    },
+    "imagesloaded.pkgd.min.js": {
+      "bower": ["imagesloaded"]
+    },
+    "unslider.js": {
+      "bower": ["unslider"]
+    },
+    "noty.js": {
+      "bower": ["noty"]
+    }
+  },
+  "config": {
+    "devUrl": "http://sd.localhost:8989/"
+  }
+}

@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.stagedriving",
+    "sha256_cert_fingerprints":
+    ["F7:9B:E0:2E:FA:81:7A:D9:25:53:94:CF:D1:8A:C0:76:D9:28:DE:42:3C:4A:48:49:1F:53:93:24:CE:FB:92:B3"]
+  }
+}]

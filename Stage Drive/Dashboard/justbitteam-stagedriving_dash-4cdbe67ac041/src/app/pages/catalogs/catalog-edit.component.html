@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-8">
+    <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+      <nb-card-header>
+        <span>Catalogo</span>
+
+        <span>
+          <a nbButton status="primary" outline href="#/pages/catalogs/{{id}}/items/new">CREA ITEM</a>
+          <a nbButton status="primary" outline (click)="showCatalogForm = true">MODIFICA CATALOGO</a>
+          <!-- <a nbButton status="primary" outline (click)="requestExport()">ESPORTA DATI</a> -->
+        </span>
+      </nb-card-header>
+    
+      <nb-card-body *ngIf="id">
+
+        <form #myForm="ngForm" *ngIf="showCatalogForm">
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-3 col-form-label">Nome</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name" [(ngModel)]="catalog.name">
+            </div>
+          </div>
+
+          <!-- <div class="form-group row">
+            <label for="inputDescription" class="col-sm-3 col-form-label">Descrizione</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputDescription" placeholder="Descrizione" name="description" [(ngModel)]="catalog.description">
+            </div>
+          </div> -->
+          
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button type="submit" class="btn btn-primary" type="submit" [disabled]="imgLoading || loading" (click)="save()">Salva</button>
+            </div>
+          </div>
+        </form>
+
+        <ngx-catalog-items *ngIf="!showCatalogForm"></ngx-catalog-items>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row" *ngIf="!showCatalogForm">
+    <div class="col-md-8">
+      <nb-card [nbSpinner]="loading" nbSpinnerStatus="primary">
+        <nb-card-header>
+          <span>Brand</span>
+
+          <span>
+            <a nbButton status="primary" outline href="#/pages/catalogs/{{id}}/brands/new">CREA BRAND</a>
+          </span>
+        </nb-card-header>
+      
+        <nb-card-body *ngIf="id">  
+          <ngx-catalog-brands></ngx-catalog-brands>
+  
+          <!-- <form #myForm="ngForm" >
+            <div class="form-group row">
+              <label for="inputName" class="col-sm-3 col-form-label">Nome</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputName" placeholder="Nome" name="name" [(ngModel)]="catalog.name">
+              </div>
+            </div>
+  
+            
+            <div class="form-group row">
+              <div class="offset-sm-3 col-sm-9">
+                <button type="submit" class="btn btn-primary" type="submit" [disabled]="imgLoading || loading" (click)="save()">Salva</button>
+              </div>
+            </div>
+          </form> -->
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+
+

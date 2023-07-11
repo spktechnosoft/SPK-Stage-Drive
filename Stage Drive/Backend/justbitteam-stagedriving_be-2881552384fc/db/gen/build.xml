@@ -1,0 +1,74 @@
+<project name="hibernate-tools" basedir="." default="all">
+
+	<taskdef name="hibernatetool"
+			classname="org.hibernate.tool.ant.HibernateToolTask"> 
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+	</taskdef> 
+	
+	<target name="all" depends="gen_entities,gen_daos_abs">
+ 	</target>
+
+	<target name="gen_entities" description="generate hibernate classes">
+		<hibernatetool destdir="../../src/main/java/" >
+
+			<hbmtemplate
+				templatepath="template/" 
+   				template="pojo/Pojo.ftl" 
+ 				filepattern="{package-name}/{class-name}.java">
+				<property key="jdk5" value="true" />
+  				<property key="ejb3" value="true" />
+			</hbmtemplate>
+		
+			<jdbcconfiguration
+				configurationfile="hibernate.cfg.xml"
+				revengfile="hibernate.reveng.xml"
+				packagename="com.stagedriving.modules.commons.ds.entities"
+				detectmanytomany="true"/>
+		</hibernatetool>
+	</target>
+	
+	<target name="gen_daos_abs" description="generate hibernate daos">
+		<hibernatetool destdir="../../src/main/java/" >
+		
+			<hbmtemplate
+				templatepath="template/" 
+   				template="dao/daohome.ftl" 
+ 				filepattern="{package-name}/Abstract{class-name}DAO.java">
+  				<property key="ejb3" value="true" />
+				<property key="jdk5" value="true" />
+	            <property key="sessionFactoryName" value="HibernateSessionFactory" />
+			</hbmtemplate>
+		
+			<jdbcconfiguration
+				configurationfile="hibernate.cfg.xml"
+				revengfile="hibernate.reveng.xml"
+				packagename="com.stagedriving.modules.commons.ds.daos.model"
+				detectmanytomany="true"/>
+		</hibernatetool>
+	</target>
+	
+	<target name="gen_daos" description="generate hibernate daos extends">
+		<hibernatetool destdir="../../src/main/java/" >
+		
+			<hbmtemplate
+				templatepath="template/" 
+   				template="daoext/daoext_home.ftl" 
+ 				filepattern="{package-name}/{class-name}DAO.java">
+  				<property key="ejb3" value="true" />
+				<property key="jdk5" value="true" />
+	            <property key="sessionFactoryName" value="HibernateSessionFactory" />
+			</hbmtemplate>
+		
+			<jdbcconfiguration
+				configurationfile="hibernate.cfg.xml"
+				revengfile="hibernate.reveng.xml"
+				packagename="com.stagedriving.modules.commons.ds.daos"
+				detectmanytomany="true"/>
+		</hibernatetool>
+	</target>
+
+</project>

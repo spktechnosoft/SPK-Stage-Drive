@@ -1,0 +1,19 @@
+{
+  "name": "jquery",
+  "main": "dist/jquery.js",
+  "license": "MIT",
+  "ignore": [
+    "package.json"
+  ],
+  "keywords": [
+    "jquery",
+    "javascript",
+    "browser",
+    "library"
+  ],
+  "_source": "nexus+http://nexus.justbit.it/repository/bower-all/jquery",
+  "_target": ">=1.8.0",
+  "_release": "3.2.1",
+  "version": "3.2.1",
+  "_originalSource": "jquery"
+}

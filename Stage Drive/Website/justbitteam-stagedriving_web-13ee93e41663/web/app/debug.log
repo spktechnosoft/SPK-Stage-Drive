@@ -1,0 +1,18 @@
+[16-Oct-2019 15:55:03 UTC] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/svg-image.php:460) in /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/user-class.php on line 38
+[16-Oct-2019 15:55:03 UTC] PHP Stack trace:
+[16-Oct-2019 15:55:03 UTC] PHP   1. {main}() /usr/share/nginx/www/web/wp/wp-cron.php:0
+[16-Oct-2019 15:55:03 UTC] PHP   2. require_once() /usr/share/nginx/www/web/wp/wp-cron.php:33
+[16-Oct-2019 15:55:03 UTC] PHP   3. require_once() /usr/share/nginx/www/web/wp/wp-load.php:42
+[16-Oct-2019 15:55:03 UTC] PHP   4. require_once() /usr/share/nginx/www/web/wp-config.php:9
+[16-Oct-2019 15:55:03 UTC] PHP   5. include() /usr/share/nginx/www/web/wp/wp-settings.php:426
+[16-Oct-2019 15:55:03 UTC] PHP   6. require_once() /usr/share/nginx/www/web/app/themes/sage_new_custom/functions.php:32
+[16-Oct-2019 15:55:03 UTC] PHP   7. session_start() /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/user-class.php:38
+[16-Oct-2019 15:55:03 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/svg-image.php:460) in /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/user-class.php on line 38
+[16-Oct-2019 15:55:03 UTC] PHP Stack trace:
+[16-Oct-2019 15:55:03 UTC] PHP   1. {main}() /usr/share/nginx/www/web/wp/wp-cron.php:0
+[16-Oct-2019 15:55:03 UTC] PHP   2. require_once() /usr/share/nginx/www/web/wp/wp-cron.php:33
+[16-Oct-2019 15:55:03 UTC] PHP   3. require_once() /usr/share/nginx/www/web/wp/wp-load.php:42
+[16-Oct-2019 15:55:03 UTC] PHP   4. require_once() /usr/share/nginx/www/web/wp-config.php:9
+[16-Oct-2019 15:55:03 UTC] PHP   5. include() /usr/share/nginx/www/web/wp/wp-settings.php:426
+[16-Oct-2019 15:55:03 UTC] PHP   6. require_once() /usr/share/nginx/www/web/app/themes/sage_new_custom/functions.php:32
+[16-Oct-2019 15:55:03 UTC] PHP   7. session_start() /usr/share/nginx/www/web/app/themes/sage_new_custom/lib/user-class.php:38
